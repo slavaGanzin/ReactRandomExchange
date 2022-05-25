@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 200px;
+  transition: opacity 0.4s;
 }
 
 .CurrencyExchangeForm, .CurrencyTable {
@@ -65,4 +66,8 @@ input, select {
 .result {
   padding-left: 20px;
   color: grey;
+}
+
+.hidden {
+  opacity: 0;
 }

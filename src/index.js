@@ -81,20 +81,21 @@ function App() {
 
   useEffect(() => {
     const updateRates = () =>
-      fetch('http://localhost:8000/api/currency/rates', {mode: 'cors'})
+      fetch('/api/currency/rates', {mode: 'cors'})
         .then(x => x.json()).then(setRates)
+        .catch(console.error)
 
     setInterval(updateRates, 5000)
     updateRates()
   },[])
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/currency/list', {mode: 'cors'}).catch(console.log).then(x => x.json()).then(setCurrencies)
+    fetch('/api/currency/list', {mode: 'cors'}).then(x => x.json()).then(setCurrencies).catch(console.error)
   }, [])
 
   return (
-    <div className='App'>
-      <h1>Random Currency Exchange</h1>
+    <div className={"App "+ (!Object.keys(rates).length || !currencies.length ? 'hidden' : '')}>
+      <h1>Random Rates Currency Exchange</h1>
       <CurrencyExchangeForm currencies={currencies} rates={rates} />
       <CurrencyTable currencies={currencies} rates={rates} />
     </div>
