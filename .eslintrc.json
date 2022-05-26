@@ -7,6 +7,11 @@
   "parserOptions": {
       "sourceType": "module"
   },
-  "rules": {"one-var": 0,"array-element-newline": 0, "dot-location": ["error", "property"],"padded-blocks": 0}
+  "rules": {
+    "one-var": 0,
+    "array-element-newline": 0, 
+    "dot-location": ["error", "property"],
+    "padded-blocks": 0
+  }
 
 }
