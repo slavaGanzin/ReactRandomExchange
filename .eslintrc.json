@@ -1,0 +1,12 @@
+{
+  "env": {"es2020": true, "browser": true},
+  "plugins": [
+    "react"
+  ],
+  "extends": ["eslint:all", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "parserOptions": {
+      "sourceType": "module"
+  },
+  "rules": {"one-var": 0,"array-element-newline": 0, "dot-location": ["error", "property"],"padded-blocks": 0}
+
+}
